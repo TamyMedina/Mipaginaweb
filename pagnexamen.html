@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pagina Examen</title>
+  <link rel="stylesheet" href="pagina.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-imagen">
+      <img src="logo.png" alt="Logo Agenda">
+    </div>
+
+    <button class="toggle-btn" id="toggleBtn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <nav class="menu">
+        <a href="#seccion-perfil">
+          <i class="fa-solid fa-user"></i>
+          <span class="texto-menu">Perfil</span>
+        </a>
+      <a href="#seccion-clases">
+        <i class="fa-solid fa-house"></i>
+        <span class="texto-menu">Mis Clases</span>
+      </a>
+
+      <a href="#calendario">
+        <i class="fa-solid fa-calendar"></i>
+        <span class="texto-menu">Calendario</span>
+      </a>
+
+      <a href="#seccion-tareas">
+        <i class="fa-solid fa-list-check"></i>
+        <span class="texto-menu">Tareas</span>
+      </a>
+
+      <a href="#seccion-notas">
+        <i class="fa-solid fa-book"></i>
+        <span class="texto-menu">Notas</span>
+      </a>
+
+      <a href="#seccion-metas">
+        <i class="fa-solid fa-bullseye"></i>
+        <span class="texto-menu">Metas</span>
+      </a>
+      
+      <a href="#seccion-horario">
+        <i class="fa-solid fa-clock"></i>
+        <span class="texto-menu">Horario</span>
+      </a>
+
+      <a href="#seccion-configuracion">
+        <i class="fa-solid fa-gear"></i>
+        <span class="texto-menu">Configuración</span>
+      </a>
+    </nav>
+
+    <button class="btn-salir" onclick="window.location.href='login.html'">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Salir</span>
+    </button>
+  </aside>
+
+  <main class="principal">
+
+    <div class="header">
+      <h1>Bienvenido</h1>
+      <div class="buscador">
+        <input type="text" id="inputBuscador" placeholder="Buscar...">
+      </div>
+    </div>
+
+    <div id="seccion-inicio">
+      <div class="grid">
+
+        <div class="tarjeta" style="cursor: pointer;" data-target="seccion-clases">
+          <h3>Mis Clases</h3>
+          <p> Haz clic para gestionar tus clases.</p>
+        </div>
+
+        <div class="tarjeta" style="cursor: pointer;" data-target="seccion-tareas">
+          <h2>Tareas</h2>
+          <p> Haz clic para gestionar tus tareas.</p>
+        </div>
+
+        <div class="tarjeta" style="cursor: pointer;" data-target="seccion-notas">
+          <h2>Notas</h2>
+          <p> Haz clic para gestionar tus notas.</p>
+        </div>
+
+        <div class="tarjeta" style="cursor: pointer;" data-target="seccion-metas">
+          <h3>Metas</h3>
+          <p> Haz clic para gestionar tus metas.</p>
+        </div>
+
+        <div class="tarjeta" style="cursor: pointer;" data-target="seccion-horario">
+          <h3>Horario</h3>
+          <p>Haz clic para gestionar tus horarios de clase.</p>
+        </div>
+
+      </div> 
+    </div> 
+  <div id="seccion-perfil" class="subseccion-app" style="display: none;">
+
+    <div class="tarjeta tarjeta-grande perfil-card">
+
+        <h2>
+          <i class="fa-solid fa-user"></i>
+              Mi Perfil
+        </h2>
+
+      <div class="perfil-header">
+
+          <img src="logo.png"
+            id="fotoPerfil"
+            class="foto-perfil">
+
+      <div>
+
+          <h3 class="nombre-perfil"> </h3>
+
+        <input
+    type="text"
+    id="carreraPerfil"
+    class="input-carrera"
+    placeholder="Escribe tu carrera">
+
+      </div>
+
+    </div>
+
+    <div class="perfil-info">
+
+      <div class="info-item">
+        <strong>Correo:</strong>
+       <span id="correoPerfil"></span>
+      </div>
+
+      <div class="info-item">
+        <strong>Usuario:</strong>
+        <span id="usuarioPerfil"></span>
+      </div>
+
+    </div>
+
+    <div class="estadisticas-perfil">
+      <div class="stat-card">
+    <i class="fa-solid fa-book-open stat-icon"></i>
+    <p>Materias</p>
+</div>
+
+<div class="stat-card">
+    <i class="fa-solid fa-list-check stat-icon"></i>
+    <p>Tareas</p>
+</div>
+
+<div class="stat-card">
+    <i class="fa-solid fa-bullseye stat-icon"></i>
+    <p>Metas</p>
+</div>
+    </div>
+
+    <div class="acciones-perfil">
+
+      <input type="file"
+       id="inputFoto"
+       accept="image/*"
+       hidden>
+
+<label for="inputFoto" class="btn-archivo">
+    <i class="fa-solid fa-camera"></i>
+    Seleccionar foto
+</label>
+
+      <button class="button-guardar" onclick="guardarPerfil()">
+        <i class="fa-solid fa-floppy-disk"></i>
+          Guardar Cambios
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+    <div id="seccion-clases" class="subseccion-app" style="display: none;">
+     <div class="tarjeta tarjeta-grande">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Gestión de Asignaturas</h2>
+        <p>Añade y organiza los detalles importantes de tus clases del semestre.</p>
+        
+        <div class="formulario-app">
+          <input type="text" id="nueva-materia-nombre" placeholder="Nombre de la materia">
+          <input type="text" id="materia-profesor" placeholder="Profesor / Aula">
+          <button class="button-guardar" onclick="agregarNuevaMateria()">Añadir</button>
+        </div>
+
+        <div id="lista-materias-detallada" style="display: flex; flex-direction: column; gap: 10px;">
+          </div>
+      </div>
+    </div>
+
+    <div id="seccion-tareas" class="subseccion-app" style="display: none;">
+      <div class="tarjeta tarjeta-grande">
+        <h2><i class="fa-solid fa-list-check"></i> Panel de Tareas Pendientes</h2>
+        <p>Registra tus asignaciones pendientes y márcalas cuando las termines.</p>
+        
+        <div class="formulario-app" style="margin: 20px 0; display: flex; gap: 10px;">
+          <input type="text" id="input-nueva-tarea" placeholder="Ej. Estudiar para examen de base de datos..." style="flex: 1;">
+          <button class="button-guardar" onclick="crearTareaAbajo()">
+            <i class="fa-solid fa-plus"></i>
+              Añadir Tarea
+          </button>
+        </div>
+
+        <ul id="contenedor-lista-tareas" style="list-style: none; padding: 0;">
+          </ul>
+      </div>
+    </div>
+
+    <div id="seccion-notas" class="subseccion-app" style="display: none;">
+      <div class="tarjeta tarjeta-grande">
+        <h2><i class="fa-solid fa-book"></i> Bloc de Notas Rápidas</h2>
+        <p>Escribe libremente tus apuntes, códigos o recordatorios importantes.</p>
+        <textarea placeholder="Empieza a escribir tus anotaciones aquí..." style="width: 100%; flex: 1; min-height: 220px; margin-top: 15px; padding: 15px; border-radius: 8px; border: 1px solid #e0d0d5; resize: none; outline: none; font-family: inherit; background: #fffcfd;"></textarea>
+      </div>
+    </div>
+
+    <div id="seccion-metas" class="subseccion-app" style="display: none;">
+      <div class="tarjeta tarjeta-grande">
+        <h2><i class="fa-solid fa-bullseye"></i> Objetivos del Semestre</h2>
+        <p>Monitorea tus metas a corto y mediano plazo.</p>
+        
+        <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 20px;">
+          <div class="meta-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <strong>Aprender a programar en JavaScript</strong>
+              <span>10%</span>
+            </div>
+            <div style="width: 100%; background: #eee; height: 10px; border-radius: 5px; overflow: hidden;">
+              <div style="width: 10%; background: #cbb4be; height: 10px;"></div>
+            </div>
+          </div>
+
+          <div style="background: #fdfafb; padding: 15px; border-radius: 10px; border: 1px solid #e0d0d5;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <strong>Mejorar promedio académico</strong>
+              <span>90%</span>
+            </div>
+            <div style="width: 100%; background: #eee; height: 10px; border-radius: 5px; overflow: hidden;">
+              <div style="width: 90%; background: #cbb4be; height: 10px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="seccion-horario" class="subseccion-app" style="display: none;">
+      <div class="tarjeta tarjeta-grande">
+        <h3>Modificar Horario</h3>
+        <div class="form-horario">
+          <input type="text" id="materia" placeholder="Materia">
+          <input type="text" id="hora" placeholder="Hora">
+          <select id="dia">
+            <option>Lunes</option>
+            <option>Martes</option>
+            <option>Miércoles</option>
+            <option>Jueves</option>
+            <option>Viernes</option>
+          </select>
+          <button class="button-guardar" onclick="agregarClase()">Agregar</button>
+        </div>
+        <div id="listaHorario"></div>
+      </div>
+    </div>
+
+    <div class="calendar-container subseccion-app" id="calendario">
+      <div class="calendar-header">
+        <h2>Calendario</h2>
+        <div class="calendar-navigation">
+          <button onclick="prevMonth()">◀</button>
+          <span id="monthYear" style="font-size: 20px; font-weight: bold; margin: 0 15px; color: #2d2020;">Mayo 2026</span>
+          <button onclick="nextMonth()">▶</button>
+        </div>
+      </div>
+      <div class="calendar" id="calendar"></div>
+    </div>
+
+    <div id="seccion-configuracion" class="subseccion-app" style="display: none;">
+      <div class="tarjeta" style="width: 100%; min-height: 350px;">
+        <h2>Configuración del Sistema</h2>
+        <p>Aquí podrás personalizar el comportamiento y estilo de tu agenda personal.</p>
+      </div>
+    </div>
+
+  <footer class="footer">
+   <p>♡ Mi Página</p>
+
+   <p>Tamara Martínez</p>
+
+   <div class="redes">
+      <i class="bx bxl-instagram"></i>
+      <i class="bx bxl-github"></i>
+      <i class="bx bxl-whatsapp"></i>
+   </div>
+</footer>
+  </main>
+
+  <script src="menu.js"></script>
+</body>
+</html>

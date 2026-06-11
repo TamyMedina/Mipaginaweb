@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #c9b8be, #e8dade);
+}
+.login-container{
+    width: 350px;
+    padding: 40px;
+    background-color: #ece6e8;
+    border-radius: 20px;
+    border: 2px solid #d8c7ce;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: aparecer 0.8s ease;
+}
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+.login-container h1{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3b2323;
+}
+.input-box{
+    margin-bottom: 20px;
+}
+
+.input-box label{
+    display: block;
+    margin-bottom: 8px;
+    color: #6b4d57;
+    font-weight: bold;
+}
+
+.input-box input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #d8c7ce;
+    background-color: #f7f3f4;
+    outline: none;
+    font-size: 15px;
+}
+
+.input-box input:focus{
+    border-color: #b99aa5;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: #a87584;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #9f7c87;
+}
+
+.extra{
+    margin-top: 18px;
+    text-align: center;
+    color: #6b4d57;
+}
+
+.extra a{
+    text-decoration: none;
+    color: #b45b4d;
+    font-weight: bold;
+}
+.extra a:hover{
+    color: #9e473b;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+#mensaje{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 17px;
+    color: #7b4f59;
+}
+@media(max-width:480px){
+
+    .login-container{
+        width: 90%;
+        padding: 25px;
+    }
+
+}
